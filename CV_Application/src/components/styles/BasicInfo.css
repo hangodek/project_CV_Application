@@ -1,0 +1,33 @@
+.dropdown-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    box-shadow: 0px 0px 3px;
+    border-radius: 1rem;
+}
+
+.expand-icon {
+    width: 2rem;
+}
+
+.expand-icon:hover {
+    cursor: pointer;
+}
+
+.inputcontainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.inputcontainer label {
+    margin-left: 0.7rem;
+    font-size: 1.2rem;
+}
+
+input {
+    height: 2rem;
+    border-radius: 1rem;
+    padding: 0 1rem;
+}

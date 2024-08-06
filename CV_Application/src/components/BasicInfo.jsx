@@ -4,16 +4,14 @@ import expandLess from './assets/arrow-up.svg'
 import './styles/BasicInfo.css'
 
 
-function BasicInfo() {
-    const [isShown, setShown] = useState(false)
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
-    const [country, setCountry] = useState('')
+function BasicInfo({
+    name, setName,
+    email, setEmail,
+    phone, setPhone,
+    country, setCountry,
+}) {
 
-    function handleActive() {
-        setActive((prevState) => !prevState)
-    }
+    const [isShown, setShown] = useState(false)
 
     function handleShown() {
         setShown((prevState) => !prevState)
@@ -78,7 +76,7 @@ function BasicInfo() {
                         ></input>
                     </div>
                     <div className="inputcontainer">
-                        <label htmlFor="country">country :</label>
+                        <label htmlFor="country">Country :</label>
                         <input
                         onChange={handleCountry}
                         value={country}
@@ -87,6 +85,7 @@ function BasicInfo() {
                         id='country'
                         ></input>
                     </div>
+                    <hr></hr>
                 </div> : null }
                 
             </div>

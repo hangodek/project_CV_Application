@@ -1,13 +1,12 @@
-import './styles/Paper.css'
-import countryImg from './assets/earth.svg'
-import emailImg from './assets/email.svg'
-import phoneImg from './assets/phone.svg'
+import './styles/Paper.css';
+import countryImg from './assets/earth.svg';
+import emailImg from './assets/email.svg';
+import phoneImg from './assets/phone.svg';
 
 function Paper({
     name, email,
     phone, country,
-    universityName, degree,
-    startYear, endYear,
+    education,
 }) {
 
     return (
@@ -30,11 +29,13 @@ function Paper({
                 </div>
                 <h1>Education</h1>
                 <hr />
-                <div className='cvBody'>
-                    <div className='cvBodyChildren'>
-                        <h2>{universityName} : {startYear} - {endYear}</h2>
-                        <p>{degree}</p>
+                <div className="cvBody">
+                    {education.map((education, index) => (
+                    <div key={index} className={`education-${index}`}>
+                        <h2>{education.universityName} : {education.startYear} - {education.endYear}</h2>
+                        <h3>{education.degree}</h3>
                     </div>
+                    ))}
                 </div>
             </div>
         </>

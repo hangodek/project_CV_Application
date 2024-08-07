@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import expandMore from './assets/arrow-down.svg'
-import expandLess from './assets/arrow-up.svg'
+import { useState } from 'react';
+import expandMore from './assets/arrow-down.svg';
+import expandLess from './assets/arrow-up.svg';
 
-function Education({
-    universityName, setUniversity,
-    degree, setDegree,
-    startYear, setStartYear,
-    endYear, setEndYear,
-}) {
+function Education({ education, setEducation }) {
 
     const [isShown, setShown] = useState(false)
 
     function handleShown() {
-        setShown((prevState) => !prevState)
+        setShown((prevState) => !prevState);
     }
 
-    function handleUniversity(e) {
-        setUniversity(e.target.value)
+    const addEducation = () => {
+        setEducation([...education, {universityName: '', degree: '', startYear: '', endYear: ''}]);
     }
 
-    function handleDegree(e) {
-        setDegree(e.target.value)
+    const removeEducation = (index) => {
+        const newEducation = education.filter((_, i) => i !== index);
+        setEducation(newEducation);
     }
 
-    function handleStartYear(e) {
-        setStartYear(e.target.value)
-    }
-
-    function handleEndYear(e) {
-        setEndYear(e.target.value)
+    const handleInputChange = (index, field, value) => {
+        const newEducation = education.map((education, i) => (
+            i === index ? { ...education, [field]: value } : education
+        ));
+        setEducation(newEducation);
     }
 
     return (
@@ -42,48 +37,54 @@ function Education({
                     className='expand-icon'>
                     </img>
                 </div>
-                {isShown ? <div className='dropdown-content'>
-                    <div className='inputcontainer'>
-                        <label htmlFor='universityname'>University / School Name :</label>
-                        <input
-                        onChange={handleUniversity}
-                        value={universityName}
-                        type='text'
-                        name='universityname'
-                        id='universityname'
-                        ></input>
-                    </div>
-                    <div className='inputcontainer'>
-                        <label htmlFor='degree'>Degree :</label>
-                        <input
-                        onChange={handleDegree}
-                        value={degree}
-                        type='text'
-                        name='degree'
-                        id='degree'
-                        ></input>
-                    </div>
-                    <div className='inputcontainer'>
-                        <label htmlFor='startYear'>Start Year :</label>
-                        <input
-                        onChange={handleStartYear}
-                        value={startYear}
-                        type='text'
-                        name='startYear'
-                        id='startYear'
-                        ></input>
-                    </div>
-                    <div className='inputcontainer'>
-                        <label htmlFor='endYear'>End Year :</label>
-                        <input
-                        onChange={handleEndYear}
-                        value={endYear}
-                        type='text'
-                        name='endYear'
-                        id='endYear'
-                        ></input>
-                    </div>
-                    <hr></hr>
+                {isShown ? <div className="dropdown-content">
+                    {education.map((education, index) => (
+                        <div key={index} className="education-form">
+                            <div className="inputcontainer">
+                                <label htmlFor={`universityname-${index}`}>University / School Name :</label>
+                                <input
+                                    onChange={(e) => handleInputChange(index, 'universityName', e.target.value)}
+                                    value={education.universityName}
+                                    type='text'
+                                    name={`universityname-${index}`}
+                                    id={`universityname-${index}`}
+                                />
+                            </div>
+                            <div className='inputcontainer'>
+                                <label htmlFor={`degree-${index}`}>Degree :</label>
+                                <input
+                                    onChange={(e) => handleInputChange(index, 'degree', e.target.value)}
+                                    value={education.degree}
+                                    type='text'
+                                    name={`degree-${index}`}
+                                    id={`degree-${index}`}
+                                />
+                            </div>
+                            <div className='inputcontainer'>
+                                <label htmlFor={`startYear-${index}`}>Start Year :</label>
+                                <input
+                                    onChange={(e) => handleInputChange(index, 'startYear', e.target.value)}
+                                    value={education.startYear}
+                                    type='text'
+                                    name={`startYear-${index}`}
+                                    id={`startYear-${index}`}
+                                />
+                            </div>
+                            <div className='inputcontainer'>
+                                <label htmlFor={`endYear-${index}`}>End Year :</label>
+                                <input
+                                    onChange={(e) => handleInputChange(index, 'endYear', e.target.value)}
+                                    value={education.endYear}
+                                    type='text'
+                                    name={`endYear-${index}`}
+                                    id={`endYear-${index}`}
+                                />
+                            </div>
+                            <button onClick={() => removeEducation(index)}>Remove</button>
+                            {index < education.length - 1 && <hr />}
+                        </div>
+                    ))}
+                    <button onClick={addEducation}>Add Education</button>
                 </div> : null}
             </div>
         </>

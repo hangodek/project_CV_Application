@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import expandMore from './assets/arrow-down.svg'
-import expandLess from './assets/arrow-up.svg'
-import './styles/BasicInfo.css'
+import { useState } from 'react';
+import expandMore from './assets/arrow-down.svg';
+import expandLess from './assets/arrow-up.svg';
+import './styles/BasicInfo.css';
 
 
 function BasicInfo({

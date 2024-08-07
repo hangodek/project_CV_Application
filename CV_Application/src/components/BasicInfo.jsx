@@ -45,8 +45,8 @@ function BasicInfo({
                     ></img>
                 </div>
                 {isShown ? <div className='dropdown-content'>
-                    <div className="inputcontainer">
-                        <label htmlFor="name">Name :</label>
+                    <div className='inputcontainer'>
+                        <label htmlFor='name'>Name :</label>
                         <input
                         onChange={handleName}
                         value={name}
@@ -55,8 +55,8 @@ function BasicInfo({
                         id='name'
                         ></input>
                     </div>
-                    <div className="inputcontainer">
-                        <label htmlFor="email">Email :</label>
+                    <div className='inputcontainer'>
+                        <label htmlFor='email'>Email :</label>
                         <input
                         onChange={handleEmail}
                         value={email}
@@ -65,8 +65,8 @@ function BasicInfo({
                         id='email'
                         ></input>
                     </div>
-                    <div className="inputcontainer">
-                        <label htmlFor="phone">Phone Number :</label>
+                    <div className='inputcontainer'>
+                        <label htmlFor='phone'>Phone Number :</label>
                         <input
                         onChange={handlePhone}
                         value={phone}
@@ -75,8 +75,8 @@ function BasicInfo({
                         id='phone'
                         ></input>
                     </div>
-                    <div className="inputcontainer">
-                        <label htmlFor="country">Country :</label>
+                    <div className='inputcontainer'>
+                        <label htmlFor='country'>Country :</label>
                         <input
                         onChange={handleCountry}
                         value={country}

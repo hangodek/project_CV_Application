@@ -1,3 +1,21 @@
+.paper-container > h1:first-child {
+    text-align: center;
+}
+
 .cvHeader {
-    
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cvHeaderChildren {
+    display: flex;
+}
+
+.cvHeaderChildren img {
+    width: 2rem;
+}
+
+.cvBodyChildren p {
+    font-size: 1.2rem
 }

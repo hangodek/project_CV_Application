@@ -5,15 +5,15 @@ import Paper from './components/Paper'
 
 function App() {
 
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [country, setCountry] = useState('')
+  const [name, setName] = useState('Muhammad Farhan Pulungan')
+  const [email, setEmail] = useState('farhan@gmail.com')
+  const [phone, setPhone] = useState('+6281375258000')
+  const [country, setCountry] = useState('Indonesia')
   
-  const [universityName, setUniversity] = useState('')
-  const [degree, setDegree] = useState('')
-  const [startYear, setStartYear] = useState('')
-  const [endYear, setEndYear] = useState('')
+  const [universityName, setUniversity] = useState('University of Al-Wasliyah Sumatera Utara')
+  const [degree, setDegree] = useState('Bachelor in Management of Islamic Education')
+  const [startYear, setStartYear] = useState('2022')
+  const [endYear, setEndYear] = useState('2024')
 
   return (
     <>
@@ -33,7 +33,12 @@ function App() {
           />
         </div>
         <div className='right-container'>
-          <Paper name={name} />
+          <Paper
+            name={name} email={email}
+            phone={phone} country={country}
+            universityName={universityName} degree={degree}
+            startYear={startYear} endYear={endYear}
+          />
         </div>
       </div>
     </>

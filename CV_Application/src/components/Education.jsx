@@ -33,8 +33,8 @@ function Education({
 
     return (
         <>
-            <div className="drowdown-container">
-                <div className="dropdown-button">
+            <div className='drowdown-container'>
+                <div className='dropdown-button'>
                     <h2>Education</h2>
                     <img
                     onClick={handleShown}
@@ -42,9 +42,9 @@ function Education({
                     className='expand-icon'>
                     </img>
                 </div>
-                {isShown ? <div className="dropdown-content">
-                    <div className="inputcontainer">
-                        <label htmlFor="universityname">University / School Name :</label>
+                {isShown ? <div className='dropdown-content'>
+                    <div className='inputcontainer'>
+                        <label htmlFor='universityname'>University / School Name :</label>
                         <input
                         onChange={handleUniversity}
                         value={universityName}
@@ -53,8 +53,8 @@ function Education({
                         id='universityname'
                         ></input>
                     </div>
-                    <div className="inputcontainer">
-                        <label htmlFor="degree">Degree :</label>
+                    <div className='inputcontainer'>
+                        <label htmlFor='degree'>Degree :</label>
                         <input
                         onChange={handleDegree}
                         value={degree}
@@ -63,22 +63,22 @@ function Education({
                         id='degree'
                         ></input>
                     </div>
-                    <div className="inputcontainer">
-                        <label htmlFor="startYear">Start Year :</label>
+                    <div className='inputcontainer'>
+                        <label htmlFor='startYear'>Start Year :</label>
                         <input
                         onChange={handleStartYear}
                         value={startYear}
-                        type='date'
+                        type='text'
                         name='startYear'
                         id='startYear'
                         ></input>
                     </div>
-                    <div className="inputcontainer">
-                        <label htmlFor="endYear">End Year :</label>
+                    <div className='inputcontainer'>
+                        <label htmlFor='endYear'>End Year :</label>
                         <input
                         onChange={handleEndYear}
                         value={endYear}
-                        type='date'
+                        type='text'
                         name='endYear'
                         id='endYear'
                         ></input>

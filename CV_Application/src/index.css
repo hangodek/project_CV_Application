@@ -5,26 +5,37 @@
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .main-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding: 1.2rem;
+  padding: 1rem;
   height: 100vh;
 }
 
 .left-container {
   background-color: #EFEFEF;
-  /* border: 1px solid black; */
   box-shadow: 0px 1px 2px 1px;
   border-radius: 10px;
   padding: 1rem;
 }
 
 .right-container {
-  /* border: 1px solid black; */
-  box-shadow: -2px -1px 2px 1px;
+  box-shadow: 0px 1px 2px 1px;
   margin-left: 1rem;
   padding: 1rem;
+  width: 100%;
+}
+
+@media print {
+  .left-container {
+    display: none;
+  }
+
+  .right-container {
+    display: block;
+  }
 }
